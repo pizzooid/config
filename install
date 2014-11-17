@@ -1,0 +1,25 @@
+#!/bin/bash
+
+dir=~/Dropbox/.dotfiles                    # dotfiles directory
+time=$(date +%Y%m%d_%H%m%S)
+oldsuffix="old.$(hostname)-$time"
+
+# list of files/folders to symlink in homedir
+files="vimrc vim gitconfig hgrc i3 screenrc tmux.conf xinitrc"
+
+##########
+
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
+echo "Moving any existing dotfiles from ~ to $dir with suffix $oldsuffix"
+for file in $files; do
+  absfile=~/.$file
+  # if file exists and is no symlink, move it to .dotfiles
+  if [[ -e $absfile ]] && ! [[ -h $absfile ]]; then
+    mv ~/.$file $dir/$file.$oldsuffix
+  fi
+  # if file doesn't exist, link it
+  if ! [[ -e $absfile ]]; then
+    echo "Creating symlink to $file in home directory."
+    ln -s $dir/$file ~/.$file
+  fi
+done

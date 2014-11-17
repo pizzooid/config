@@ -1,0 +1,6 @@
+[ui]
+username = Pietro Palmesi <pietro.palmesi@gmail.com>
+[extensions]
+hgext.purge=
+#or, if purge.py not in the hgext dir:
+#purge=/path/to/purge.py
