@@ -3,8 +3,6 @@
 	email = pietro@palmesi.com
 [core]
 	autocrlf = input
-[push]
-	default = simple
 [color]
 	ui = true
 [alias]
