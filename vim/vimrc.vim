@@ -1,7 +1,7 @@
 "vim Config by Pietro Palmesi
 filetype off
 
-set rtp+=$HOME/Dropbox/.dotfiles/vim/bundle/Vundle.vim/
+set rtp+=$HOME/Dropbox/.dotfiles/vim/bundle/vundle/
 if has("win32")
 	let path='~/.vim/bundle'
 	call vundle#begin(path)
