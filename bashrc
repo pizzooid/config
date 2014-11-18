@@ -60,7 +60,7 @@ alias cbhs="cat $HISTFILE | tail -n 1 | cb"
 case ${TERM} in
     screen*)# PROMPT_COMMAND='echo -ne "\033k\033\0134"'
 		# function that performs the title update (invoked as PROMPT_COMMAND)
-		function update_title { printf "\033]2;%s %s\033\\" $(hostname) ${1}; }
+		function update_title { printf "\033]2;%s:%s %s\033\\" $(hostname) $(pwd) ${1}; }
 
 		# Reset title to the default before displaying the command prompt
 		PROMPT_COMMAND='update_title'   
