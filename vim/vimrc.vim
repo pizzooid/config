@@ -194,11 +194,11 @@ endif
 au! BufRead,BufNewFile *.scad set filetype=openscad 
 
 "set correct window title in tmux
-if &term == "screen"
-  set t_ts=^[k
-  set t_fs=^[\
-endif
-if &term == "screen" || &term == "xterm"
-  set title
-endif
+"if &term == "screen"
+"  set t_ts=^[k
+"  set t_fs=^[\
+"endif
+"if &term == "screen" || &term == "xterm"
+"  set title
+"endif
 

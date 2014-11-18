@@ -59,26 +59,9 @@ alias cbhs="cat $HISTFILE | tail -n 1 | cb"
 #SCREEN
 case ${TERM} in
     screen*)# PROMPT_COMMAND='echo -ne "\033k\033\0134"'
-		# user command to change default pane title on demand
-		function title { TMUX_PANE_TITLE="$*"; }
-
 		# function that performs the title update (invoked as PROMPT_COMMAND)
 		function update_title { printf "\033]2;%s %s\033\\" $(hostname) ${1}; }
 
-		# default pane title is the name of the current process (i.e. 'bash')
-		TMUX_PANE_TITLE=#$(ps -o comm $$ | tail -1)
-
 		# Reset title to the default before displaying the command prompt
-		PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'update_title'   
-
-		# Update title before executing a command: set it to the command
-		trap 'update_title "$BASH_COMMAND"' DEBUG
+		PROMPT_COMMAND='update_title'   
 esac
-
-settitle() {
-    printf "\033k$1\033\\"
-}
-bash_prompt_command() {
-    settitle "`hostname -s`:$PWD"
-}
-PROMPT_COMMAND=bash_prompt_command
