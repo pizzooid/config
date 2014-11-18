@@ -5,7 +5,7 @@ time=$(date +%Y%m%d_%H%m%S)
 oldsuffix="old.$(hostname)-$time"
 
 # list of files/folders to symlink in homedir
-files="vimrc vim gitconfig hgrc i3 screenrc tmux.conf xinitrc"
+files="vimrc vim gitconfig hgrc i3 screenrc tmux.conf xinitrc bashrc"
 
 ##########
 
@@ -24,4 +24,4 @@ for file in $files; do
   fi
 done
 
-git submodule update --init $dir/vim/bundle/Vundle.vim
+#git submodule update --init $dir/vim/bundle/Vundle.vim
