@@ -63,10 +63,10 @@ case ${TERM} in
 		function title { TMUX_PANE_TITLE="$*"; }
 
 		# function that performs the title update (invoked as PROMPT_COMMAND)
-		function update_title { printf "\033]2;%s\033\\" "${1:-$TMUX_PANE_TITLE}"; }
+		function update_title { printf "\033]2;%s %s\033\\" $(hostname) ${1}; }
 
 		# default pane title is the name of the current process (i.e. 'bash')
-		TMUX_PANE_TITLE=$(ps -o comm $$ | tail -1)
+		TMUX_PANE_TITLE=#$(ps -o comm $$ | tail -1)
 
 		# Reset title to the default before displaying the command prompt
 		PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'update_title'   
