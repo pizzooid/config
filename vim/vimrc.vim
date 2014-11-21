@@ -1,7 +1,8 @@
 "vim Config by Pietro Palmesi
+set nocompatible
 filetype off
 
-set rtp+=$HOME/Dropbox/.dotfiles/vim/bundle/vundle/
+set rtp+=$HOME/Dropbox/.dotfiles/vim/bundle/Vundle.vim/
 if has("win32")
 	let path='~/.vim/bundle'
 	call vundle#begin(path)
@@ -11,13 +12,13 @@ endif
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'gmarik/Vundle.vim'
+"Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'cscope.vim'
 Plugin 'localrc.vim'
 Plugin 'clang-complete'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'dansomething/vim-eclim'
+"Plugin 'dansomething/vim-eclim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/argtextobj.vim'
