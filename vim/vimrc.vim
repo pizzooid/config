@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 
-set rtp+=$HOME/Dropbox/.dotfiles/vim/bundle/Vundle.vim/
+set rtp+=$HOME/.vim/bundle/Vundle.vim/
 if has("win32")
 	let path='~/.vim/bundle'
 	call vundle#begin(path)
@@ -13,7 +13,7 @@ endif
 " let Vundle manage Vundle
 " required! 
 Plugin 'gmarik/Vundle.vim'
-"Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'cscope.vim'
 Plugin 'localrc.vim'
 Plugin 'clang-complete'
@@ -30,6 +30,8 @@ Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
+
+call vundle#end()
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
