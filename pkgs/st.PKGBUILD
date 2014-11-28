@@ -1,7 +1,7 @@
 # Maintainer: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Scytrin dai Kinthra <scytrin@gmail.com>
 
-pkgname=st-git
+pkgname=st-pizz
 _pkgname=st
 epoch=1
 pkgver=20140511.6dcf735
