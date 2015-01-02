@@ -4,7 +4,8 @@ filetype off
 
 set rtp+=$HOME/.vim/bundle/Vundle.vim/
 if has("win32")
-	let path='~/.vim/bundle'
+	set rtp+=$HOME/vim/bundle/Vundle.vim/
+	let path='~/vim/bundle'
 	call vundle#begin(path)
 else
 	call vundle#begin()
@@ -23,6 +24,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/syntastic'
 
 "Ulti Snips START
 " Track the engine.
@@ -30,6 +32,8 @@ Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
+
+
 
 call vundle#end()
 

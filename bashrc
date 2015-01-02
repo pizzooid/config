@@ -57,6 +57,8 @@ alias cbwd="pwd | cb"
 # Copy most recent command in bash history
 alias cbhs="cat $HISTFILE | tail -n 1 | cb" 
 
+alias i3lock="i3lock -c 303030"
+
 #SCREEN
 case ${TERM} in
     screen*)# PROMPT_COMMAND='echo -ne "\033k\033\0134"'

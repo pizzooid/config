@@ -5,7 +5,7 @@ time=$(date +%Y%m%d_%H%m%S)
 oldsuffix="old.$(hostname)-$time"
 
 # list of files/folders to symlink in homedir
-files="vimrc gitconfig hgrc i3 screenrc tmux.conf xinitrc bashrc Xmodmap"
+files="vimrc gitconfig hgrc i3 screenrc tmux.conf xinitrc bashrc Xmodmap ghci"
 
 ##########
 
