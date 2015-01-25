@@ -11,8 +11,6 @@ PS1='[\u@\h \W]\$ '
 export EDITOR="vim"
 set -o vi
 
-source /etc/profile.d/autojump.sh
-
 # A shortcut function that simplifies usage of xclip.
 # - Accepts input from either stdin (pipe), or params.
 # ------------------------------------------------

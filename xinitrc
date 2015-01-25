@@ -11,6 +11,10 @@ if [ -s ~/.Xmodmap ]; then
     xmodmap ~/.Xmodmap
 fi
 
+if [ -s ~/.xinitrc.local ]; then
+    sh .xinitrc.local
+fi
+
 xsetroot -solid '#101010' &
 
 exec i3
