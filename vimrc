@@ -26,6 +26,7 @@ Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'rking/ag.vim'
+Plugin 'majutsushi/tagbar'
 
 "Ulti Snips START
 " Track the engine.
@@ -148,11 +149,8 @@ let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsectio
 
 let g:tex_isk = "48-57,a-z,A-Z,192-255,:"
 
-map <F3> :NERDTreeToggle<CR>:TlistClose<cr><F5>
-:let NERDTreeChDirMode=2
-:let NERDTreeIgnore=['\.ochk$', '\~$','\.o$']
-"Map Taglist
-map <F2> :TlistToggle<cr>:NERDTreeClose<cr><f5>
+"Map Tagbar
+map <F2> :TagbarToggle<cr>
 
 "set iskeyword=@,48-57,_,-,:,192-255
 
@@ -213,3 +211,5 @@ au! BufRead,BufNewFile *.scad set filetype=openscad
 let g:ctrlp_extensions = ['tag', 'undo', 'line']
 
 set rnu
+
+noremap <C-T> :CtrlPTag<CR>
