@@ -25,6 +25,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
+Plugin 'rking/ag.vim'
 
 "Ulti Snips START
 " Track the engine.
