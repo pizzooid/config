@@ -188,6 +188,10 @@ for_window [window_role="task_dialog"] floating enable
 
 #You can also use title rules and regular expressions: 
 #for_window [title="Preferences$"] floating enable
+for_window [title="Find and Replace"] floating enable
 
 #or WM_CLASS
 #for_window [class="(?i)mplayer"] floating enable
+#
+focus_follows_mouse yes
+mouse_warping output

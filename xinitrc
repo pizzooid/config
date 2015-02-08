@@ -3,9 +3,8 @@ xrandr --output HDMI1 --primary
 
 xrdb -merge ~/.Xresources         # update x resources db
 
-xautolock -time 6 -locker "i3lock -d" &
+xautolock -time 6 -locker "i3lock -d -c 303030" &
 dropboxd &
-kaynav &
 
 if [ -s ~/.Xmodmap ]; then
     xmodmap ~/.Xmodmap

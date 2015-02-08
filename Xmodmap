@@ -1,4 +1,4 @@
-clear mod4
-clear mod1
-add mod1 = Super_L Super_R
-add mod4 = Alt_L Alt_R Meta_L
+!!!! clear mod4
+!!!! clear mod1
+!!!! add mod1 = Super_L Super_R
+!!!! add mod4 = Alt_L Alt_R Meta_L

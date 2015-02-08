@@ -2,13 +2,22 @@
 set nocompatible
 filetype off
 
-set rtp+=$HOME/.vim/bundle/Vundle.vim/
 if has("win32")
-	set rtp+=$HOME/vim/bundle/Vundle.vim/
+	set guifont=Droid_Sans_Mono:h10
+	set rtp+=~/vim/bundle/Vundle.vim/
 	let path='~/vim/bundle'
 	call vundle#begin(path)
 else
+	set rtp+=~/.vim/bundle/Vundle.vim/
+	set guifont=Droid\ Sans\ Mono\ 10
 	call vundle#begin()
+endif
+
+"use cygwin bash
+if has("win32")
+	let &shell='C:/cygwin/bin/bash.exe' . ' --rcfile c:/cygwin/home/' . $USERNAME . '/.bashrc ' . '-i '
+	set shellcmdflag=-c
+	set shellxquote=\"
 endif
 
 " let Vundle manage Vundle
@@ -20,11 +29,12 @@ Plugin 'localrc.vim'
 Plugin 'clang-complete'
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'dansomething/vim-eclim'
-Plugin 'Raimondi/delimitMate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
+Plugin 'kien/rainbow_parentheses.vim'
 
 "Ulti Snips START
 " Track the engine.
@@ -135,23 +145,16 @@ let g:solarized_visibility="low"
 colorscheme solarized
 
 imap <C-Space> <C-X><C-U>
-set guifont=Droid\ Sans\ Mono\ 10
 " using Source Code Pro
 
 "spelling
-set spellfile=$HOME/Dropbox/vim/spellfile.add
+set spellfile=$HOME/Dropbox/spellfile.add
 
 set completeopt=longest,menuone
 "from http://caffeinatedcode.wordpress.com/2009/11/16/simple-latex-ctags-and-taglist/
 let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
 
 let g:tex_isk = "48-57,a-z,A-Z,192-255,:"
-
-map <F3> :NERDTreeToggle<CR>:TlistClose<cr><F5>
-:let NERDTreeChDirMode=2
-:let NERDTreeIgnore=['\.ochk$', '\~$','\.o$']
-"Map Taglist
-map <F2> :TlistToggle<cr>:NERDTreeClose<cr><f5>
 
 "set iskeyword=@,48-57,_,-,:,192-255
 
@@ -209,3 +212,17 @@ au! BufRead,BufNewFile *.scad set filetype=openscad
 "  set title
 "endif
 
+let g:syntastic_cpp_compiler_options = '-std=c++11'
+
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll|o|gcda|gcno)$',
+    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+    \ }
+
+
+"Debug mappings
+map <f11> :Cstep <CR>
+map <f12> :Cnext <CR>
+map <F8> :exe "Cprint " . expand("<cword>") <CR>
+map <F9> :exe "Cbreak " . expand("%:p") . ":" . line(".")<CR>
