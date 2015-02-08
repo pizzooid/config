@@ -210,3 +210,8 @@ au! BufRead,BufNewFile *.scad set filetype=openscad
 "  set title
 "endif
 
+let g:ctrlp_extensions = ['tag', 'undo', 'line']
+
+"Toggle relative numbers when in normal mode
+autocmd InsertEnter * :set nornu
+autocmd InsertLeave * :set relativenumber
