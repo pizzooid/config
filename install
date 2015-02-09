@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=~/Dropbox/.dotfiles                    # dotfiles directory
+dir=~/.dotfiles                    # dotfiles directory
 time=$(date +%Y%m%d_%H%m%S)
 oldsuffix="old.$(hostname)-$time"
 

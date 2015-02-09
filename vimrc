@@ -35,6 +35,8 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'rking/ag.vim'
+Plugin 'majutsushi/tagbar'
 
 "Ulti Snips START
 " Track the engine.
@@ -156,6 +158,9 @@ let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsectio
 
 let g:tex_isk = "48-57,a-z,A-Z,192-255,:"
 
+"Map Tagbar
+map <F2> :TagbarToggle<cr>
+
 "set iskeyword=@,48-57,_,-,:,192-255
 
 set hidden
@@ -226,3 +231,9 @@ map <f11> :Cstep <CR>
 map <f12> :Cnext <CR>
 map <F8> :exe "Cprint " . expand("<cword>") <CR>
 map <F9> :exe "Cbreak " . expand("%:p") . ":" . line(".")<CR>
+
+let g:ctrlp_extensions = ['tag', 'undo', 'line']
+
+set rnu
+
+noremap <C-T> :CtrlPTag<CR>
