@@ -221,7 +221,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-    \ 'file': '\v\.(exe|so|dll|o|gcda|gcno)$',
+    \ 'file': '\v\.(exe|so|dll|o|gcda|gcno|d)$',
     \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
     \ }
 
@@ -237,3 +237,6 @@ let g:ctrlp_extensions = ['tag', 'undo', 'line']
 set rnu
 
 noremap <C-T> :CtrlPTag<CR>
+
+"Load Rainbow Parens
+map <f4> :RainbowParenthesesToggleAll<CR>
