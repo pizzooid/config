@@ -23,10 +23,10 @@ endif
 " let Vundle manage Vundle
 " required! 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+"Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'cscope.vim'
 Plugin 'localrc.vim'
-Plugin 'clang-complete'
+"Plugin 'clang-complete'
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'dansomething/vim-eclim'
 Plugin 'kien/ctrlp.vim'
@@ -34,16 +34,16 @@ Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-Plugin 'kien/rainbow_parentheses.vim'
+"Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'rking/ag.vim'
 Plugin 'majutsushi/tagbar'
 
 "Ulti Snips START
 " Track the engine.
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 
 
 
@@ -121,7 +121,10 @@ set modeline
 set textwidth=0
 "
 "" Do not wrap lines automatically
-set nowrap
+""set nowrap
+set wrap
+set lbr
+set showbreak=+++
 "
 "" Set working directory to current file
 "set autochdir
@@ -145,6 +148,8 @@ set undodir=~/tmp,/tmp,C:/_backup
 "endif
 let g:solarized_visibility="low"
 colorscheme solarized
+
+hi! link NonText ColorColumn
 
 imap <C-Space> <C-X><C-U>
 " using Source Code Pro

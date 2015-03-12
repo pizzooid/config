@@ -173,14 +173,14 @@ bar {
 }
 
 # workspace screens
-#workspace 1 output HDMI1
-#workspace 2 output HDMI1
-#workspace 3 output HDMI1
-#workspace 4 output HDMI1
-#workspace 5 output VGA1
-#workspace 6 output VGA1
-#workspace 7 output VGA1
-#workspace 8 output VGA1
+workspace 1 output HDMI1
+workspace 2 output HDMI1
+workspace 3 output HDMI1
+workspace 4 output HDMI1
+workspace 5 output VGA1
+workspace 6 output VGA1
+workspace 7 output VGA1
+workspace 8 output VGA1
 
 #floating modifier for some programs
 for_window [window_role="pop-up"] floating enable
