@@ -26,7 +26,7 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'cscope.vim'
 Plugin 'localrc.vim'
-"Plugin 'clang-complete'
+Plugin 'Rip-Rip/clang_complete'
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'dansomething/vim-eclim'
 Plugin 'kien/ctrlp.vim'
@@ -37,6 +37,13 @@ Plugin 'tpope/vim-surround'
 "Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'rking/ag.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'chrisbra/Recover.vim'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-scripts/Align'
+Plugin 'vim-scripts/tex_autoclose.vim'
 
 "Ulti Snips START
 " Track the engine.
@@ -161,12 +168,13 @@ set completeopt=longest,menuone
 "from http://caffeinatedcode.wordpress.com/2009/11/16/simple-latex-ctags-and-taglist/
 let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
 
-let g:tex_isk = "48-57,a-z,A-Z,192-255,:"
+let g:tex_isk = "48-57,a-z,A-Z,192-255,:,_"
+au BufNewFile,BufRead *.tex let &isk= g:tex_isk
+"set isk
+
 
 "Map Tagbar
 map <F2> :TagbarToggle<cr>
-
-"set iskeyword=@,48-57,_,-,:,192-255
 
 set hidden
 
@@ -221,11 +229,19 @@ au! BufRead,BufNewFile *.scad set filetype=openscad
 "if &term == "screen" || &term == "xterm"
 "  set title
 "endif
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
     \ 'file': '\v\.(exe|so|dll|o|gcda|gcno|d)$',
     \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
     \ }

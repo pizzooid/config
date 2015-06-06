@@ -14,6 +14,7 @@ if [ -s ~/.xinitrc.local ]; then
     sh .xinitrc.local
 fi
 
-xsetroot -solid '#101010' &
+#xsetroot -solid '#101010' &
+feh --bg-center ~/Dropbox/goal1k.png
 
 exec i3
