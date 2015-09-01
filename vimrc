@@ -154,6 +154,7 @@ set undodir=~/tmp,/tmp,C:/_backup
 	set background=dark
 "endif
 let g:solarized_visibility="low"
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 hi! link NonText ColorColumn
