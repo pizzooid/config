@@ -27,7 +27,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'cscope.vim'
 Plugin 'localrc.vim'
 Plugin 'Rip-Rip/clang_complete'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 "Plugin 'dansomething/vim-eclim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/argtextobj.vim'
@@ -146,16 +146,13 @@ set undodir=~/tmp,/tmp,C:/_backup
 "let g:clang_snippets = 1
 "let g:clang_snippets_engine = 'clang_complete'
 "
-"colorscheme default
-"colorscheme pietro
 "if has("gui_running")
 "	set background=light
 "else
 	set background=dark
 "endif
-let g:solarized_visibility="low"
-let g:solarized_termtrans = 1
-colorscheme solarized
+let base16colorspace=256
+colorscheme base16-default
 
 hi! link NonText ColorColumn
 
