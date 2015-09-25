@@ -1,0 +1,2 @@
+"\e[P": delete-char
+set completion-prefix-display-length 2
