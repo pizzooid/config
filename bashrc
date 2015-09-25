@@ -70,3 +70,8 @@ case ${TERM} in
 esac
 
 #stty erase ^H
+
+if [ -f ~/.bashrc.local ]
+then
+	source ~/.bashrc.local
+fi
