@@ -28,3 +28,8 @@ esac
 sh ~/.dotfiles/base16-default.dark.sh
 #"\e[P": delete-char
 #stty erase ^H
+
+if [ -f ~/.bashrc.local ]
+then
+	source ~/.bashrc.local
+fi
