@@ -259,3 +259,6 @@ noremap <C-T> :CtrlPTag<CR>
 
 "Load Rainbow Parens
 map <f4> :RainbowParenthesesToggleAll<CR>
+
+"Clear search with <F1>
+noremap <F1> :nohlsearch<CR>
