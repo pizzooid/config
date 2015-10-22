@@ -177,12 +177,12 @@ map <F2> :TagbarToggle<cr>
 set hidden
 
 "Map MiniBufExplorer
-let g:miniBufExplAutoStart = 0
-map <F4> :MBEToggle<cr>
-map <A-h> :bp<cr>
-imap <A-l> <esc>:bn<cr>
-imap <A-h> <esc>:bp<cr>
-map <A-l> :bn<cr>
+"let g:miniBufExplAutoStart = 0
+"map <F4> :MBEToggle<cr>
+"map <A-h> :bp<cr>
+"imap <A-l> <esc>:bn<cr>
+"imap <A-h> <esc>:bp<cr>
+"map <A-l> :bn<cr>
 
 "Latex Mappings
 " LaTeX (rubber) macro for compiling
@@ -256,9 +256,23 @@ let g:ctrlp_extensions = ['tag', 'undo', 'line']
 set rnu
 
 noremap <C-T> :CtrlPTag<CR>
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.swp
 
 "Load Rainbow Parens
 map <f4> :RainbowParenthesesToggleAll<CR>
 
 "Clear search with <F1>
 noremap <F1> :nohlsearch<CR>
+
+:tnoremap <A-h> <C-\><C-n><C-w>h
+:tnoremap <A-j> <C-\><C-n><C-w>j
+:tnoremap <A-k> <C-\><C-n><C-w>k
+:tnoremap <A-l> <C-\><C-n><C-w>l
+:nnoremap <A-h> <C-w>h
+:nnoremap <A-j> <C-w>j
+:nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
+:inoremap <A-h> <Esc><C-w>h
+:inoremap <A-j> <Esc><C-w>j
+:inoremap <A-k> <Esc><C-w>k
+:inoremap <A-l> <Esc><C-w>l

@@ -190,6 +190,8 @@ for_window [window_role="task_dialog"] floating enable
 #You can also use title rules and regular expressions: 
 #for_window [title="Preferences$"] floating enable
 for_window [title="Find and Replace"] floating enable
+for_window [title="Find and Replace"] floating enable
+for_window [class="dzen2"] border pixel 0
 
 #or WM_CLASS
 #for_window [class="(?i)mplayer"] floating enable

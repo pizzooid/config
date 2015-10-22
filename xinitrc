@@ -3,10 +3,7 @@ xrandr --output HDMI1 --primary
 
 xrdb -merge ~/.Xresources         # update x resources db
 
-xautolock -time 6 -locker "i3lock -d -c 303030" \
--notify 30 \
-  -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" \
-&
+xset s 300
 dropbox &
 
 if [ -s ~/.Xmodmap ]; then
@@ -21,3 +18,5 @@ fi
 feh --bg-center ~/Dropbox/designs/blurred-rainbow-wallpaper.jpg
 
 exec i3
+
+~/.dotfiles/xsidle.sh "i3lock -d -c 303030" &
