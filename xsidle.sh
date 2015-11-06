@@ -18,16 +18,16 @@ do
 		if [ $tosleep -le 0 ];
 		then
 			$cmd
-		elif [ $tosleep -le 10 ];
+		elif [ $tosleep -le 15 ];
 		then
-			while [[ $tosleep -gt 1 && $tosleep -le 10 ]]
+			while [[ $tosleep -gt 1 && $tosleep -le 15 ]]
 			do
 				echo "lock in $tosleep"
 				sleep 0.1
 				tosleep=$(($(xssstate -t) / 1000))
 			done | dzen2 -y 300
 		else
-			sleep $(($tosleep - 10))
+			sleep 5
 		fi
 	else
 		sleep 10
