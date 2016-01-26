@@ -34,7 +34,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st -e tmux -2
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -198,3 +198,5 @@ for_window [class="dzen2"] border pixel 0
 #
 focus_follows_mouse yes
 mouse_warping output
+
+exec sh ~/.dotfiles/xsidle.sh "i3lock -d -c 303030"

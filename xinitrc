@@ -19,4 +19,4 @@ feh --bg-center ~/Dropbox/designs/blurred-rainbow-wallpaper.jpg
 
 exec i3
 
-sh ~/.dotfiles/xsidle.sh "i3lock -d -c 303030" &
+#sh ~/.dotfiles/xsidle.sh "i3lock -d -c 303030" > ~/.dotfiles/xsidle.out 2> ~/.dotfiles/xsidle.err &

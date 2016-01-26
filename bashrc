@@ -17,12 +17,18 @@ set -o vi
 
 #SCREEN
 case ${TERM} in
-    screen*)# PROMPT_COMMAND='echo -ne "\033k\033\0134"'
+	screen*)# PROMPT_COMMAND='echo -ne "\033k\033\0134"'
 		# function that performs the title update (invoked as PROMPT_COMMAND)
 		function update_title { printf "\033]2;%s:%s %s\033\\" $(hostname) $(pwd) ${1}; }
 
 		# Reset title to the default before displaying the command prompt
 		PROMPT_COMMAND='update_title'   
+		;;
+	xterm*|rxvt*)
+		PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+		;;
+	*)
+		;;
 esac
 
 sh ~/.dotfiles/base16-default.dark.sh

@@ -145,13 +145,14 @@ set undodir=~/tmp,/tmp,C:/_backup
 "clang options
 "let g:clang_snippets = 1
 "let g:clang_snippets_engine = 'clang_complete'
+let g:clang_jumpto_declaration_key="<C-}>"
 "
 "if has("gui_running")
 "	set background=light
 "else
 	set background=dark
 "endif
-let base16colorspace=256
+let base16colorspace="256"
 colorscheme base16-default
 
 hi! link NonText ColorColumn
@@ -224,9 +225,9 @@ au! BufRead,BufNewFile *.scad set filetype=openscad
 "  set t_ts=^[k
 "  set t_fs=^[\
 "endif
-"if &term == "screen" || &term == "xterm"
-"  set title
-"endif
+if &term == "screen" || &term == "xterm"
+  set title
+endif
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -256,7 +257,7 @@ let g:ctrlp_extensions = ['tag', 'undo', 'line']
 set rnu
 
 noremap <C-T> :CtrlPTag<CR>
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.swp
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.swp,*.o
 
 "Load Rainbow Parens
 map <f4> :RainbowParenthesesToggleAll<CR>
