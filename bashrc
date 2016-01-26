@@ -25,6 +25,7 @@ case ${TERM} in
 		PROMPT_COMMAND='update_title'   
 		;;
 	xterm*|rxvt*)
+		export TERM=xterm-256color
 		PS1="\[\e]0;\u@\h: \w\a\]$PS1"
 		;;
 	*)

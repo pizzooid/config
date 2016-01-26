@@ -221,11 +221,11 @@ endif
 au! BufRead,BufNewFile *.scad set filetype=openscad 
 
 "set correct window title in tmux
-"if &term == "screen"
-"  set t_ts=^[k
-"  set t_fs=^[\
-"endif
-if &term == "screen" || &term == "xterm"
+if &term == "screen-256color"
+  set t_ts=^[k
+  set t_fs=^[\
+endif
+if &term == "screen-256color" || &term == "xterm"
   set title
 endif
 set statusline+=%#warningmsg#
