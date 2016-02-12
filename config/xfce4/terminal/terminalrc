@@ -21,6 +21,5 @@ MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 FontName=Monospace 10
 TitleMode=TERMINAL_TITLE_REPLACE
-ScrollingLines=100
-ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ScrollingLines=10000
 
