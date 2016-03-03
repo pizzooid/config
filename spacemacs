@@ -24,6 +24,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     ;; haskell
      (auto-completion :variables
                       auto-completion-return-key-behavior 'complete
                       auto-completion-tab-key-behavior 'cycle
@@ -32,6 +33,8 @@ values."
      emacs-lisp
      git
      markdown
+     haskell
+     evernote
      ;; org
      (shell :variables
             shell-default-height 30
@@ -52,8 +55,9 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
                                       helm-company
+                                      base16-theme
                                       )
-   ;; A list of packages and/or extensions that will not be install and loaded.
+   ;; A list of packages and/or extenSIons that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
@@ -244,7 +248,7 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    ;; MY VARS
-   dotspacemacs-configuration-layers
+   dotspacemacs-configuration-layers t
    ))
 
 (defun dotspacemacs/user-init ()
@@ -258,6 +262,7 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  (setq-default vc-follow-symlinks t )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

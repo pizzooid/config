@@ -9,10 +9,18 @@ export PATH=$PATH:/home/pietro/.cabal/bin/
 
 alias ls='ls --color=auto'
 alias chrome='google-chrome-stable'
+alias emax="emacsclient -t"
+
+function spacemacs()
+{
+  emacsclient -c "$1" &
+}
 #PS1='[\u@\h \W]\$ '
 PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 
-export EDITOR="vim"
+export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -c -a emacs"
+
 set -o vi
 
 #SCREEN
@@ -39,6 +47,11 @@ sh ~/.dotfiles/base16-default.dark.sh
 if [ -f ~/.bashrc.local ]
 then
 	source ~/.bashrc.local
+fi
+
+if [ -f ~/.dir_colors ]
+then
+	eval 'dircolors ~/.dir_colors'
 fi
 
 tput smkx

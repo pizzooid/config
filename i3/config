@@ -200,3 +200,4 @@ focus_follows_mouse yes
 mouse_warping output
 
 exec sh ~/.dotfiles/xsidle.sh "i3lock -d -c 303030"
+exec emacs --daemon
