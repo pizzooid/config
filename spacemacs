@@ -257,7 +257,7 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (setq-default vc-follow-symlinks t )
-  (add-to-list 'auto-mode-alist '("\\Makefile.include\\" . makefile-mode))
+  (add-to-list 'auto-mode-alist '("\\Makefile.include\\'" . makefile-mode))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
