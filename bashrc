@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-export PATH=$PATH:/home/pietro/.cabal/bin/
+export PATH=$PATH:/home/pietro/.cabal/bin/:/home/pietro/Sumatra/bin
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

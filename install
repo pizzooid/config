@@ -24,4 +24,4 @@ for file in $files; do
   fi
 done
 
-#git submodule update --init $dir/vim/bundle/Vundle.vim
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
