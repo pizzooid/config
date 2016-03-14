@@ -1,0 +1,4 @@
+!rofi -dump-xresources | grep kb-
+rofi.kb-row-up:                      Down,Control+k
+rofi.kb-row-down:                    Down,Control+j
+rofi.kb-accept-entry:                Control+l,Control+m,Return,KP_Enter
