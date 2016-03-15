@@ -263,6 +263,9 @@ layers configuration. You are free to put any user code."
   (with-eval-after-load 'org
     (setq org-agenda-files (file-expand-wildcards "~/Dropbox/org/*.org"))
     )
+  (setq initial-buffer-choice
+        (lambda ()
+          (get-buffer "*spacemacs*")))
   )
 
 
