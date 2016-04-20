@@ -49,6 +49,7 @@ values."
      latex
      gtags
      org
+     clojure
      fasd
     )
    ;; List of additional packages that will be installed without being

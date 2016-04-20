@@ -199,6 +199,6 @@ for_window [class="dzen2"] border pixel 0
 focus_follows_mouse yes
 mouse_warping output
 
-exec 'sh ~/.dotfiles/xsidle.sh "i3lock -d -c 303030"'
+exec 'xfce4-terminal -e "sh ~/.dotfiles/xsidle.sh" -H'
 exec "emacs --daemon"
 exec "rofi -key-run F12 -terminal xfce4-terminal"
