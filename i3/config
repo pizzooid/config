@@ -200,5 +200,5 @@ focus_follows_mouse yes
 mouse_warping output
 
 exec 'xfce4-terminal -e "sh ~/.dotfiles/xsidle.sh" -H'
-exec "emacs --daemon"
+exec 'xfce4-terminal -e "emacs --daemon" -H'
 exec "rofi -key-run F12 -terminal xfce4-terminal"
