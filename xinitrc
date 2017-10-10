@@ -1,9 +1,9 @@
-xrandr --output VGA1 --auto --left-of HDMI1
+xrandr --output HDMI1 --auto --left-of VGA1
 xrandr --output HDMI1 --primary
 
 xrdb -merge ~/.Xresources         # update x resources db
-
-xset s 300
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+xset s 600
 dropbox &
 
 if [ -s ~/.Xmodmap ]; then
@@ -19,4 +19,4 @@ feh --bg-center ~/Dropbox/designs/blurred-rainbow-wallpaper.jpg
 
 exec i3
 
-sh ~/.dotfiles/xsidle.sh "i3lock -d -c 303030" > ~/.dotfiles/xsidle.out 2> ~/.dotfiles/xsidle.err &
+#sh ~/.dotfiles/xsidle.sh "i3lock -d -c 303030" > ~/.dotfiles/xsidle.out 2> ~/.dotfiles/xsidle.err &

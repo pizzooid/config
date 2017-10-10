@@ -2,3 +2,5 @@
 !!!! clear mod1
 !!!! add mod1 = Super_L Super_o
 !!!! add mod4 = Alt_L Alt_R Meta_L
+clear Lock
+keycode 66 = Escape NoSymbol Escape

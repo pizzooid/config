@@ -11,3 +11,10 @@
 	lg = !"git lg1"
 [push]
 	default = simple
+[pack]
+	window = 0
+	windowMemory = 100m
+	packSizeLimit = 100m
+	threads = 1
+[magit]
+	hideCampaign = true

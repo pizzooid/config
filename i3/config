@@ -199,6 +199,5 @@ for_window [class="dzen2"] border pixel 0
 focus_follows_mouse yes
 mouse_warping output
 
-exec 'xfce4-terminal -e "sh ~/.dotfiles/xsidle.sh" -H'
-exec 'xfce4-terminal -e "emacs --daemon" -H'
-exec "rofi -key-run F12 -terminal xfce4-terminal"
+exec --no-startup-id ~/.dotfiles/autostart.sh
+exec insync start

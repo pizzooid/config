@@ -1,49 +1,46 @@
 "vim Config by Pietro Palmesi
 set nocompatible
 filetype off
+"set leader
+:let mapleader='<Space>'
+:let maplocalleader=','
 
-if has("win32")
-	set guifont=Droid_Sans_Mono:h10
-	set rtp+=~/vim/bundle/Vundle.vim/
-	let path='~/vim/bundle'
-	call vundle#begin(path)
-else
-	set rtp+=~/.vim/bundle/Vundle.vim/
-	set guifont=Droid\ Sans\ Mono\ 10
-	call vundle#begin()
-endif
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.vim/plugged')
 
 "use cygwin bash
-if has("win32")
-	let &shell='C:/cygwin/bin/bash.exe' . ' --rcfile c:/cygwin/home/' . $USERNAME . '/.bashrc ' . '-i '
-	set shellcmdflag=-c
-	set shellxquote=\"
+if !has("win32")
+	Plug 'cscope.vim'
 endif
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/Vundle.vim'
+Plug 'freitass/todo.txt-vim'
+Plug 'gmarik/Vundle.vim'
 "Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'cscope.vim'
-Plugin 'localrc.vim'
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'chriskempson/base16-vim'
+Plug 'localrc.vim'
+Plug 'Rip-Rip/clang_complete'
+Plug 'chriskempson/base16-vim'
 "Plugin 'dansomething/vim-eclim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/argtextobj.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
 "Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'rking/ag.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'chrisbra/Recover.vim'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-scripts/Align'
-Plugin 'vim-scripts/tex_autoclose.vim'
+Plug 'rking/ag.vim'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'chrisbra/Recover.vim'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/tex_autoclose.vim'
+
+if has('nvim')
+	Plug 'cazador481/fakeclip.neovim'
+endif
 
 "Ulti Snips START
 " Track the engine.
@@ -53,8 +50,7 @@ Plugin 'vim-scripts/tex_autoclose.vim'
 "Plugin 'honza/vim-snippets'
 
 
-
-call vundle#end()
+call plug#end()
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -67,9 +63,6 @@ let g:UltiSnipsEditSplit="vertical"
 filetype plugin indent on
 let g:indentLine_char = '┊'
 
-"set leader
-:let mapleader='\'
-:let maplocalleader='_'
 " no menus
 :set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar
@@ -153,7 +146,7 @@ let g:clang_jumpto_declaration_key="<C-}>"
 	set background=dark
 "endif
 let base16colorspace="256"
-colorscheme base16-default
+colorscheme base16-default-dark
 
 hi! link NonText ColorColumn
 
@@ -265,15 +258,22 @@ map <f4> :RainbowParenthesesToggleAll<CR>
 "Clear search with <F1>
 noremap <F1> :nohlsearch<CR>
 
-:tnoremap <A-h> <C-\><C-n><C-w>h
-:tnoremap <A-j> <C-\><C-n><C-w>j
-:tnoremap <A-k> <C-\><C-n><C-w>k
-:tnoremap <A-l> <C-\><C-n><C-w>l
-:nnoremap <A-h> <C-w>h
-:nnoremap <A-j> <C-w>j
-:nnoremap <A-k> <C-w>k
-:nnoremap <A-l> <C-w>l
-:inoremap <A-h> <Esc><C-w>h
-:inoremap <A-j> <Esc><C-w>j
-:inoremap <A-k> <Esc><C-w>k
-:inoremap <A-l> <Esc><C-w>l
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+inoremap <A-h> <Esc><C-w>h
+inoremap <A-j> <Esc><C-w>j
+inoremap <A-k> <Esc><C-w>k
+inoremap <A-l> <Esc><C-w>l
+
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
